@@ -25,9 +25,6 @@ module.exports = {
     encryptedPassword: {
       type: 'string'
     },
-    company_id: {
-      type: 'integer'
-    },
     img_url: {
       type: 'string',
     },
