@@ -48,7 +48,7 @@ module.exports = {
 		}
 		else{
 
-			var gotImg = req.param('email');
+			var gotImg = req.param('got_img');
 
 			var data = {
 				email: req.param('email'),
