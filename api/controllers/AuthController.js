@@ -90,7 +90,7 @@ module.exports = {
 								}
 
 
-								data['image_url'] = path.basename(files[0].fd);
+								data['img_url'] = path.basename(files[0].fd);
 								sails.log(data);
 
 								var _src = files[0].fd;
@@ -156,7 +156,7 @@ module.exports = {
 												}
 
 
-												data['image_url'] = path.basename(files[0].fd);
+												data['img_url'] = path.basename(files[0].fd);
 
 												sails.log(data);
 
