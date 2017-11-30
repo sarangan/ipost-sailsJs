@@ -35,7 +35,11 @@ module.exports = {
 								type: type,
 							};
 
+							sails.log(type);
+
 							if(type && type == 2 ){
+
+
 
 								var fs = require('fs');
 								var path = require('path');
@@ -196,12 +200,14 @@ module.exports = {
 							}
 							else{
 								// just post the text
-
+								sails.log('no image save');
+								sails.log(data);
 								Post.create(data).exec(function(err, post) {
 									if (err) {
 										res.json(200, {err: err});
 										return;
 									}
+									sails.log(post);
 									if (post.post_id) {
 										res.json({ status: 1, text: 'successfully posted' } );
 									}
