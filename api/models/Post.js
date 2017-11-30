@@ -7,12 +7,13 @@
 
 
  module.exports = {
-   autoPK: false,
+   autoPK: true,
    attributes: {
 
      post_id: {
        type: "integer",
        primaryKey: true,
+       autoIncrement: true
      },
      user_id:{
        type: "integer",
@@ -24,6 +25,6 @@
      type: {
        type: "integer" // 1 text 2 image 3 location
      },
-     
+
    }
  };
