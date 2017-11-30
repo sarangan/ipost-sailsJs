@@ -22,9 +22,11 @@ module.exports = {
 						sails.log(req.param('body') );
 
 						if (!req.param('body') ) {
+							sails.log('no body');
 							return res.json({status: 2, text: 'Please provide the text body' });
 				    }
 						else{
+							sails.log('yes body');
 							var type = req.param('type');
 
 							var data = {
