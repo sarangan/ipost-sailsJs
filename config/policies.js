@@ -38,7 +38,7 @@ module.exports.policies = {
      '*': false
    },
    'PostController': {
-     'sendpost': ['tokenAuth'],
+     'posttext': ['tokenAuth'],
      'updatepost': ['tokenAuth'],
      'getposts': ['tokenAuth'],
      'getmyposts': ['tokenAuth'],
