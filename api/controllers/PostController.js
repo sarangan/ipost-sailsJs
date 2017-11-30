@@ -272,7 +272,14 @@ module.exports = {
 
 						if(err) return res.json({error: err, status: 2});
 
-						return res.json({posts: posts, status: 1});
+						User.findOne({id :  user_id}).exec(function(err, user){
+							if(err) return res.json(err);
+
+							return res.json({posts: posts, user: user,  status: 1});
+
+						});
+
+
 
 					});
 
