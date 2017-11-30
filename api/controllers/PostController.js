@@ -264,6 +264,7 @@ module.exports = {
 			if(user){
 
 				var user_id = req.param('user_id');
+				var page = req.param('page') || 1;
 
 				if(user_id){
 
