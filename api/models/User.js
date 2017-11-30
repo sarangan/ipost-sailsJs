@@ -37,6 +37,9 @@ module.exports = {
     contact: {
       type: 'string'
     },
+    username: {
+      type: 'string'
+    },
     status: {
       type: 'integer',
       defaultsTo: 1
