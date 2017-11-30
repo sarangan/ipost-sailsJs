@@ -9,7 +9,7 @@ module.exports = {
 
 	posttext : function(req, res){
 
-		
+
 		if( req.token.hasOwnProperty('sid') ){
 			if(req.token.sid){
 
@@ -17,6 +17,9 @@ module.exports = {
 					if(err) return res.json(err);
 
 					if(user){
+
+						sails.log('body');
+						sails.log(req.param('body') );
 
 						if (!req.param('body') ) {
 							return res.json({status: 2, text: 'Please provide the text body' });
