@@ -24,8 +24,6 @@
      type: {
        type: "integer" // 1 text 2 image 3 location
      },
-     mb_createdAt: {
-       type: "string"
-     }
+     
    }
  };
