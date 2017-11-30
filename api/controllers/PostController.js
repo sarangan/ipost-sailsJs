@@ -9,6 +9,8 @@ module.exports = {
 
 	posttext : function(req, res){
 
+		sailsjs.log("this is post text ");
+
 		if( req.token.hasOwnProperty('sid') ){
 			if(req.token.sid){
 
