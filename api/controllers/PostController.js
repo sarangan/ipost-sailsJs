@@ -256,5 +256,37 @@ module.exports = {
 
 	},
 
+	getmyposts: function(req, res) {
+
+		User.findOne({id :  req.token.sid}).exec(function(err, user){
+			if(err) return res.json(err);
+
+			if(user){
+
+				var user_id = req.param('user_id');
+
+				if(user_id){
+
+					Post.query("select post.post_id, post.user_id, post.body, post.type, DATE_FORMAT(post.createdAt,'%d/%m/%Y') as postdate, photo.img_url, user.id as tuser_id, user.first_name, user.last_name, user.username, user.img_url as avatar_url, (select count(wholikes.like_id) from wholikes where wholikes.post_id = post.post_id and wholikes.user_id = "+ user.id +" and wholikes.status = 1 ) as ilike, (select count(wholikes.like_id) from wholikes where wholikes.post_id = post.post_id ) as count_likes, (select count(comment.comment_id) from comment where comment.post_id = post.post_id ) as count_comments, (select count(post.post_id) from post) as total_records from post left join photo on post.post_id =  photo.post_id inner join user on post.user_id = user.id where post.user_id="+ user_id +" order by post.createdAt DESC limit "+ (page-1) * 30 +", 30", function(err, posts){
+
+						if(err) return res.json({error: err, status: 2});
+
+						return res.json({posts: posts, status: 1});
+
+					});
+
+				}
+				else{
+					return res.json({error: 'please provide user id', status: 2});
+				}
+
+
+
+			}
+
+		});
+
+	},
+
 
 };
