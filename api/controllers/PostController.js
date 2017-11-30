@@ -233,5 +233,32 @@ module.exports = {
 
 	},
 
+	getposts: function(req, res) {
+
+		User.findOne({id :  req.token.sid}).exec(function(err, user){
+			if(err) return res.json(err);
+
+			if(user){
+
+				var page = req.param('page') || 1;
+
+				Post.query("select post.post_id, post.user_id, post.body, post.type, DATE_FORMAT(post.createdAt,'%d/%m/%Y') as postdate, photo.img_url,
+				(select count(wholikes.like_id) from wholikes where wholikes.post_id = post.post_id and wholikes.user_id = "+ user.id +" and wholikes.status = 1 ) as ilike,
+				(select count(wholikes.like_id) from wholikes where wholikes.post_id = post.post_id ) as count_likes,
+				(select count(comment.comment_id) from comment where comment.post_id = post.post_id ) as count_comments
+				 from post left join photo on post.post_id =  photo.post_id order by post.createdAt DESC limit "+ (page-1) * 30 +", 30", function(err, posts){
+
+					if(err) return res.json(err);
+
+					return res.json(posts);
+
+				});
+
+			}
+
+		});
+
+	},
+
 
 };
