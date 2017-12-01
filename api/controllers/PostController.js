@@ -488,7 +488,7 @@ module.exports = {
 									res.json(200, {err: err});
 									return;
 								}
-								res.json({ status: 1, text: 'successfully updated' } );
+								res.json({ status: 1, text: 'successfully updated', post_id :  post_id } );
 							});
 
 						}
@@ -505,7 +505,7 @@ module.exports = {
 									res.json(200, {err: err});
 									return;
 								}
-								res.json({ status: 1, text: 'successfully updated' } );
+								res.json({ status: 1, text: 'successfully updated', post_id :  post_id } );
 							});
 
 						}
