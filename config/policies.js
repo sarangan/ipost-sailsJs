@@ -43,6 +43,7 @@ module.exports.policies = {
      'getposts': ['tokenAuth'],
      'getmyposts': ['tokenAuth'],
      'togglelike': ['tokenAuth'],
+     'updateuser' : ['tokenAuth']
    }
 
 
