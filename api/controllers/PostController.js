@@ -440,7 +440,9 @@ module.exports = {
 
 				}
 				else{
-
+					sails.log('here updaing ');
+					sails.log(data);
+					sails.log(user.id);
 					User.update({id: user.id}, data).exec(function(err, user) {
 						if (err) {
 							res.json(200, {err: err});
