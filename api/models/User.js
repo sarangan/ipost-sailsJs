@@ -66,6 +66,7 @@ module.exports = {
 
   beforeUpdate: function(values, next) {
     bcrypt.genSalt(10, function(err, salt) {
+      sails.log(err);
       if (err) return next(err);
 
       bcrypt.hash(values.password, salt, function(err, hash) {

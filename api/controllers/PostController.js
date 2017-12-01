@@ -309,7 +309,6 @@ module.exports = {
 					first_name:  req.param('first_name'),
 					last_name:  req.param('last_name'),
 					contact:  req.param('contact'),
-					status: 1
 				};
 
 
