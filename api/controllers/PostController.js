@@ -440,9 +440,7 @@ module.exports = {
 
 				}
 				else{
-					sails.log('here updaing ');
-					sails.log(data);
-					sails.log(user.id);
+
 					User.update({id: user.id}, data).exec(function(err, user) {
 						if (err) {
 							res.json(200, {err: err});
@@ -463,12 +461,70 @@ module.exports = {
 		});
 
 
+	},
+
+	togglelike: function(req, res) {
+
+		User.findOne({id :  req.token.sid}).exec(function(err, user){
+			if(err) return res.json(err);
+
+			if(user){
+				var post_id = req.param('post_id');
+
+				if(post_id){
+
+					Wholikes.findOne({user_id :  user.id, post_id: post_id}).exec(function(err, wholikes){
+						if(err) return res.json(err);
+
+						if(wholikes.like_id){
+
+							// we have like id
+							var data_post = {
+								status: (wholikes.status == 1 ? 0 : 1)
+							};
+
+							Wholikes.update({ like_id: wholikes.like_id}, data_post).exec(function(err, photo_res) {
+								if (err) {
+									res.json(200, {err: err});
+									return;
+								}
+								res.json({ status: 1, text: 'successfully updated' } );
+							});
+
+						}
+						else{
+
+							var data_post = {
+								post_id: post_id,
+								user_id: user.id,
+								status: 1
+							};
+
+							Wholikes.create(data_post).exec(function(err, photo_res) {
+								if (err) {
+									res.json(200, {err: err});
+									return;
+								}
+								res.json({ status: 1, text: 'successfully updated' } );
+							});
+
+						}
+
+					});
 
 
 
+				}
 
+
+
+			}
+
+		});
 
 	},
+
+
 
 
 };

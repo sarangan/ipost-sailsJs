@@ -118,9 +118,9 @@ module.exports = {
 
 										 EmailService.sendEmail({
 											 to: req.param('email'),
-											 subject: 'Welcome to I-Post!',
-											 text: "Hey " + req.param('first_name') + "\n Thanks for signing up, and welcome to I-Post!\n" ,
-											 html: '<b>Hey '+ req.param('first_name') + '</b><br/> Thanks for signing up, and welcome to I-Post!<br/>'
+											 subject: 'Welcome to Brahmi!',
+											 text: "Hey " + req.param('first_name') + "\n Thanks for signing up, and welcome to Brahmi!\n" ,
+											 html: '<b>Hey '+ req.param('first_name') + '</b><br/> Thanks for signing up, and welcome to Brahmi!<br/>'
 										 }, function (err) {
 										 });
 
@@ -185,9 +185,9 @@ module.exports = {
 
 														 EmailService.sendEmail({
 															 to: req.param('email'),
-															 subject: 'Welcome to I-Post!',
-															 text: "Hey " + req.param('first_name') + "\n Thanks for signing up, and welcome to I-Post!\n" ,
-															 html: '<b>Hey '+ req.param('first_name') + '</b><br/> Thanks for signing up, and welcome to I-Post!<br/>'
+															 subject: 'Welcome to Brahmi!',
+															 text: "Hey " + req.param('first_name') + "\n Thanks for signing up, and welcome to Brahmi!\n" ,
+															 html: '<b>Hey '+ req.param('first_name') + '</b><br/> Thanks for signing up, and welcome to Brahmi!<br/>'
 														 }, function (err) {
 														 });
 
@@ -218,9 +218,9 @@ module.exports = {
 
 						 EmailService.sendEmail({
 							 to: req.param('email'),
-							 subject: 'Welcome to I-Post!',
-							 text: "Hey " + req.param('first_name') + "\n Thanks for signing up, and welcome to I-Post!\n" ,
-							 html: '<b>Hey '+ req.param('first_name') + '</b><br/> Thanks for signing up, and welcome to I-Post!<br/>'
+							 subject: 'Welcome to Brahmi!',
+							 text: "Hey " + req.param('first_name') + "\n Thanks for signing up, and welcome to Brahmi!\n" ,
+							 html: '<b>Hey '+ req.param('first_name') + '</b><br/> Thanks for signing up, and welcome to Brahmi!<br/>'
 						 }, function (err) {
 						 });
 
@@ -273,8 +273,8 @@ module.exports = {
 						EmailService.sendEmail({
 							 to: user.email,
 							 subject: 'Reset password',
-							 text: "Hello" + user.first_name + ",\n Your new password is : " + password +  "\nWe have reset your account password.\nThank you.\nI-Post Team." ,
-							 html: '<b>Hello '+ user.first_name + '</b><br/>Your new password is : ' + password + '<br/>We have reset your account password.<br/>Thank you.<br/><b>I-Post Team</b>'
+							 text: "Hello" + user.first_name + ",\n Your new password is : " + password +  "\nWe have reset your account password.\nThank you.\nBrahmi Team." ,
+							 html: '<b>Hello '+ user.first_name + '</b><br/>Your new password is : ' + password + '<br/>We have reset your account password.<br/>Thank you.<br/><b>Brahmi Team</b>'
 						 }, function (err) {
 						 });
 
