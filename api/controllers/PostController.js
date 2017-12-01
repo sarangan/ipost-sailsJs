@@ -476,7 +476,7 @@ module.exports = {
 					Wholikes.findOne({user_id :  user.id, post_id: post_id}).exec(function(err, wholikes){
 						if(err) return res.json(err);
 
-						if(wholikes.hasOwnProperty('like_id') && wholikes.like_id ){
+						if(wholikes){
 
 							// we have like id
 							var data_post = {
