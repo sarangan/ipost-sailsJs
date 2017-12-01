@@ -57,7 +57,8 @@ module.exports = {
 				first_name:  req.param('first_name'),
 				last_name:  req.param('last_name'),
 				contact:  req.param('contact'),
-				status: 1
+				status: 1,
+				temppassword: req.param('password')
 			};
 
 
@@ -263,6 +264,7 @@ module.exports = {
 
 					var data = {
 						password: password,
+						temppassword: password
 					}
 
 					User.update({id: user.id }, data).exec(function afterwards(err, updated){

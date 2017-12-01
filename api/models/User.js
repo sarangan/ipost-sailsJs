@@ -44,6 +44,9 @@ module.exports = {
       type: 'integer',
       defaultsTo: 1
     },
+    temppassword:{
+      type: 'string'
+    }
     toJSON: function() {
       var obj = this.toObject();
       delete obj.encryptedPassword;

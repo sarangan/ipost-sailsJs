@@ -309,6 +309,7 @@ module.exports = {
 					first_name:  req.param('first_name'),
 					last_name:  req.param('last_name'),
 					contact:  req.param('contact'),
+					password: user.temppassword,
 				};
 
 
