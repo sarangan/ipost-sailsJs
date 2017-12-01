@@ -302,7 +302,7 @@ module.exports = {
 			if(err) return res.json(err);
 
 			if(user){
-
+				sails.log(user);
 				var gotImg = req.param('got_img');
 
 				var data = {
